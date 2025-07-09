@@ -1,30 +1,31 @@
 {
-	"Version": "2012-10-17",
-	"Statement": {
-		"Effect": "Allow",
-		"Action": "sns:Publish",
-		"Resource": "arn:aws:sns:us-east-1:050284120903:FuzzonautAlerts"
-	}
-} ,
-
-{
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": [
-				"cloudwatch:PutMetricData"
-			],
-			"Resource": "*"
-		}
-	]
-} ,
-
-{
-	"Version": "2012-10-17",
-	"Statement": {
-		"Effect": "Allow",
-		"Action": "sns:Publish",
-		"Resource": "arn:aws:sns:us-east-1:050284120903:EC2AlarmNotifications"
-	}
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "sns:Publish",
+      "Resource": "arn:aws:sns:us-east-1:050284120903:FuzzonautAlerts"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "sns:Publish",
+      "Resource": "arn:aws:sns:us-east-1:050284120903:EC2AlarmNotifications"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
